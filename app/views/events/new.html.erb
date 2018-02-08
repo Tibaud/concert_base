@@ -1,0 +1,29 @@
+<% provide(:title, 'Nouvel événement') %>
+<h1>Nouvel événement</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@event, url: events_path) do |f| %>
+    <%= render 'shared/error_event_messages' %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-glass"></i></span>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Nom" %>
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+      <%= f.text_field :description, class: 'form-control', placeholder: "Description" %>
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+      <%= f.date_field :date, class: 'form-control', placeholder: "Date" %>
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+      <%= f.text_field :place, class: 'form-control', placeholder: "Lieu" %>
+    </div>
+    <br>
+    <%= f.submit "Créer un nouvel événement", class: "btn btn-sm btn-primary" %>
+    <% end %>
+  </div>

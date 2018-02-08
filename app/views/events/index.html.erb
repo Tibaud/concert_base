@@ -1,0 +1,33 @@
+<% provide(:title, "Événements") %>
+<h1>Tous les événements</h1>
+<br>
+<table class="table table-striped table-hover">
+    <tbody>
+    <tr>
+        <th>Nom</th>
+        <th>Date</th>
+        <th>Lieu</th>
+        <th><i class="em em-eye"></th>
+        <% if logged_in? %>
+            <th>Participation</th>
+        <% end %>
+    </tr>
+    <% @events.each do |e|%>
+    <tr>
+        <td> <%= e.name %> </td>
+        <td> <%= e.date.strftime("%d/%m/%Y ") unless e.date.nil? %>  </td>
+        <td> <%= e.place %> </td>
+        <td> <%= link_to "Voir", e, class: "btn btn-sm btn-info", style:"width:35%;" %> </td>
+        <% if logged_in? %>
+            <% if e.user_attendees.include?(current_user) %>
+                <td class="text-success"> Inscris </td>
+            <% elsif e.date > Time.now %>  
+                <td style="width:10%;"> <%= button_to 'Rejoindre', attend_event_path(e), method: :post, confirm: 'really?',  class: "btn btn-sm btn-primary" %> </td>  
+            <% else %>
+                <td></td>
+            <% end %>
+        <% end %>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
