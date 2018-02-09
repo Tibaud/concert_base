@@ -16,10 +16,10 @@ body {
 section {
   overflow: auto;
 }
-#results {  background-color: #ffffff;
+#results {  background-color: #ffffff;width: 100%;
 }
-.result {  background-color: #ffffff; float: left; width: 29%; margin-right: 1%;
-  text-align: center;padding-bottom: 20px;
+.result {  background-color: #ffffff; float: right; width: 32%; margin-right: 1%;
+  text-align: center;padding-bottom: 20px; position:relative;display: block;margin-top: 50px;
 }
 textarea {
   resize: vertical;
