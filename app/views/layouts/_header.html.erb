@@ -3,8 +3,7 @@
         <%= link_to "ConcertGO", root_path, id: "logo" %>
             <nav>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><%= link_to "Accueil", root_path, class: 'link-to-text-color' %></li>
-                    <li><%= link_to "Événements", events_path, class: 'link-to-text-color' %></li>
+                    <li><%= link_to "Concerts", root_path, class: 'link-to-text-color' %></li>
                     <% if logged_in? %>
                         <li class="dropdown">
                             <a href="#" class='link-to-text-color' data-toggle="dropdown">

@@ -1,18 +1,12 @@
 <% provide(:title, @user.name) %>
 <div>
-      <h1>Ton profil</h1>
+      <h1>Salut <%= @user.name %>, ça farte ?</h1>
 </div>
 <div>
     <section class="user_info">
-      <h2>
-        Nom : <%= @user.name %>
-      </h2>
-      <h2>
-       Email : <%= @user.email %>
-      </h2>
       <% if current_user == @user %>
       <%= form_tag edit_user_path(@user), method: 'get' do %>
-          <input style="width:20%; margin-left:40%" type="submit" value="Editer" class="btn btn-sm btn-primary">
+          <input style="width:20%; margin-left:40%" type="submit" value="Editer ton profil" class="btn btn-sm btn-primary">
       <% end %>
     <% end %>
     </section>
@@ -20,16 +14,16 @@
 <br>
 <br>
 <div>
-<h1>Événements créés</h1>
+<h2>Tes concerts</h2>
 <br>
 <table class="table table-striped table-hover">
     <tr>
-        <th>Non</th>
+        <th>Groupe</th>
         <th>Description</th>
         <th>Date</th>
         <th>Lieu</th>
-        <th><i class="em em-eye"></i></th>
-        <th><i class="em em-skull"></i></th>
+        <th></th>
+        <th></i></th>
     </tr>
     <% current_user.authored_events.each do |e|%>
     <tr style="background-color: #fff;">
@@ -37,30 +31,30 @@
         <td> <%= e.description %> </td>
         <td> <%= e.date.strftime("%d/%m/%Y ") unless e.date.nil? %>  </td>
         <td> <%= e.place %> </td>
-        <td> <%= button_to "Voir", e, method: :get, class:"btn btn-sm btn-primary", style:"width:100%;" %> </td>
+        <td> <%= button_to "Voir", e, method: :get, class:"btn btn-sm btn-primary", style:"width:100px;" %> </td>
         <% if e.creator == current_user %>
-        <td> <%= button_to "Supprimer", e, method: :delete, class:"btn btn-sm btn-danger", style:"width:60%;", data: {confirm: 'Etes vous sûr?' } %></td>
+        <td> <%= button_to "Supprimer", e, method: :delete, class:"btn btn-sm btn-danger", style:"width:100px;", data: {confirm: 'Etes vous sûr?' } %></td>
         <% end %>
     </tr>
     <% end %>
 </table>
 </div>
 <div class="center">
-  <%= link_to "Nouvel événement", new_event_path, class: "btn btn-sm btn-primary" %>
+  <%= link_to "Nouveau Concert", new_event_path, class: "btn btn-sm btn-primary" %>
 </div>
 <br>
 <br>
 <div>
-<h1>Évenement à venir</h1>
+<h2>Concerts à venir</h2>
 <table class="table table-striped table-hover">
     <tbody>
     <tr style="background-color: #fff;">
-        <th>Nom</th>
+        <th>Groupe</th>
         <th>Description</th>
         <th>Date</th>
         <th>Lieu</th>
-        <th><i class="em em-eye"></i></th>
-        <th><i class="em em-flying_saucer"></i></th>
+        <th></th>
+        <th></th>
     </tr>
     <% current_user.attended_events.each do |e|%>
         <% if e.date > Time.now %>
@@ -69,8 +63,8 @@
             <td> <%= e.description %> </td>
             <td> <%= e.date.strftime("%d/%m/%Y ") %>  </td>
             <td> <%= e.place %> </td>
-            <td> <%= button_to "Voir", e, method: :get, class:"btn btn-sm btn-primary", style:"width:100%;" %> </td>
-              <td> <%= button_to "Se désinscrire", unattend_event_path(e), method: :post, class:"btn btn-sm btn-danger", style:"width:70%;", data: {confirm: 'Etes vous sûr?' } %> </td>
+            <td> <%= button_to "Voir", e, method: :get, class:"btn btn-sm btn-primary", style:"width:100px;" %> </td>
+              <td> <%= button_to "Se désinscrire", unattend_event_path(e), method: :post, class:"btn btn-sm btn-danger", style:"width:100px;", data: {confirm: 'Etes vous sûr?' } %> </td>
         </tr>
         <% end %>
     <% end %>
@@ -80,7 +74,7 @@
 <br>
 <br>
 <div>
-<h1>Évenement passé</h1>
+<h1>Les concerts passés</h1>
 <br>
 <table class="table table-striped table-hover">
     <tbody>
