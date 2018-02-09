@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
-
-  root 'static_pages#home'
-
-  #users
+  root 'events#index'
+  #utilisateurs
   get '/signup', to:'users#new'
   post '/signup', to:'users#create'
-
-  #Sessions
+  #sessions
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
- 
+
   resources :users
+  #evenements
   resources :events do
     post 'attend', on: :member
     post 'unattend', on: :member

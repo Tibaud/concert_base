@@ -1,12 +1,12 @@
 <% provide(:title, "Connexion") %>
-<h1>Connecte toi</h1>
+<h1>Connecte toi pour utiliser le site</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
     <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    <span class="input-group-addon"></span>
       <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
     </div>
     <br>

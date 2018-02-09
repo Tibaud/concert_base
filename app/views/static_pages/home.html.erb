@@ -1,20 +1,2 @@
 <%= link_to root_path do %>
-  <div style="float:right;">
-  	<%= image_tag('party(1).png') %>
-  </div>
-<% end %>
-<%= link_to root_path do %>
-  	<div style="float:left;">
-  <%= image_tag('party1.png') %>
-  </div>
-<% end %>
-<br>
-<h1>Bienvenue !</h1>
-<h2>Que le dieu de la teuf soit avec toi !</h2>
-<% if logged_in? %>
-<div align="center"></div>
-<% else %>
-<div align="center">
-	<%= link_to "Inscription", signup_path, class: "btn btn-sm btn-primary" %>
-</div>
 <% end %>
