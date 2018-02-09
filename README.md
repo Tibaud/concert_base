@@ -1,4 +1,4 @@
 # Les concerts Brite !
 
 
-## Allez en cocnert avec vos potes! https://still-tor-60268.herokuapp.com/
+## Allez en concert avec vos potes! https://still-tor-60268.herokuapp.com/
