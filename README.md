@@ -1,4 +1,3 @@
-# Les concerts Brite !
+# Les concerts CSS qui float
 
-
-## Allez en concert avec vos potes! https://still-tor-60268.herokuapp.com/
+## Vas chercher du still! https://still-tor-60268.herokuapp.com/
