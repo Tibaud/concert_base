@@ -1,0 +1,121 @@
+body {
+  font-family: "Gill Sans", sans-serif;
+  background: url("http://hdqwalls.com/wallpapers/bthumb/city-blurred-hd.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 40px;
+  padding-top: 40px;
+  margin-bottom: -10px;
+}
+
+hr {
+	display: block;
+	clear: both;
+	height: 0;
+	margin: 20px 0 20px  0;
+	padding: 0;
+	border: 0;
+	font-family: arial;
+	font-size: 10px;
+	line-height: 1;
+}
+hr:after {
+	content: "▬▬▬▬▬▬▬▬▬▬▬▬";
+	height: 0;
+	letter-spacing: 0;
+	color: #2DFFA7;
+}
+
+#container{
+  width: 70%;
+  height: 60%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 10%; left: 15%; bottom: 15%; right: 15%;
+  background-color: rgba(63, 127, 191, 0.8);
+  border-radius: 10px;
+  overflow: hidden;
+}
+ #gauche{
+  width: 100%;
+  height:100%;
+  float:left;
+  color: #fff;
+  overflow: hidden;
+}
+ #gauche .bloc{
+  min-width: 52%;
+  float: left;
+  padding: 0 0 0 20px;
+}
+#gauche .bloc ul li {
+  font-size: 10px;
+  line-height: 30px;
+  vertical-align: middle;
+  margin-left: 0px;
+}
+ul {
+  list-style-type: none;
+  float: left;
+  margin-left: -45px;
+}
+.big {
+  font-size: 30px;
+  vertical-align:middle;
+  text-align: center;
+  margin-right: 30px;
+  width: 30px;
+}
+ #droite{
+  width: 250px;
+  background-color: #fff;
+  padding: 80px 10px 0 10px;
+  height:100%;
+  float: right;
+  color: #f3f3f3;
+  overflow: hidden;
+}
+.input-group input, .input-group-1 input, .input-group-4 input{
+  width: 210px;
+  height:40px;
+  margin: -1px 0 0 10px;
+  border: 1px solid #ACB3B0;
+  padding-left: 20px;
+  float: left;
+}
+.input-group-1 input{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.input-group-4 input{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.btn {
+  width: 235px;
+  height: 40px;
+  margin-top: 10px;
+  background-color: rgba(63, 127, 191, 1);
+  border:1px solid rgba(63, 127, 191, 1);
+  border-radius: 5px;
+  color: #fff;
+  margin-left: 10px;
+}
+#grey {
+  background-color: #ACB3B0;
+  width:270px;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  right:0;
+  font-size: 12px;
+  text-align: center;
+  line-height: 55px;
+}

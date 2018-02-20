@@ -1,121 +1,125 @@
+html {
+    color: gray;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: .02rem;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    min-width: 320px;
+    -webkit-touch-callout: none;
+    font-family: "proxima-nova", sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+    overflow-x: hidden;
+
+}
 body {
-  font-family: "Gill Sans", sans-serif;
-  background: url("http://hdqwalls.com/wallpapers/bthumb/city-blurred-hd.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-h1 {
-  font-weight: 900;
-  font-size: 40px;
-  padding-top: 40px;
-  margin-bottom: -10px;
-}
-
-hr {
-	display: block;
-	clear: both;
-	height: 0;
-	margin: 20px 0 20px  0;
-	padding: 0;
-	border: 0;
-	font-family: arial;
-	font-size: 10px;
-	line-height: 1;
-}
-hr:after {
-	content: "▬▬▬▬▬▬▬▬▬▬▬▬";
-	height: 0;
-	letter-spacing: 0;
-	color: #2DFFA7;
-}
-
-#container{
-  width: 70%;
-  height: 60%;
-  overflow: auto;
-  margin: auto;
-  position: absolute;
-  top: 10%; left: 15%; bottom: 15%; right: 15%;
-  background-color: rgba(63, 127, 191, 0.8);
-  border-radius: 10px;
-  overflow: hidden;
-}
- #gauche{
   width: 100%;
-  height:100%;
-  float:left;
+  margin:0;
+}
+#picfond {  background-image: url(https://checkr.com/wp-content/uploads/2015/10/checkr_header_industries-1.jpg);
+background-size: cover;}
+#header {
+  height:120px; width: 100%;
+background-color: rgba(0, 0, 255, 0.4);
+}
+#logo {
+  float: left; margin-left: 70px;
+}
+#container{
+float: right; margin: 0 auto;
+}
+#topG {
+	position: absolute; top:0px; right:20px;
+	}
+#topG a{
+        display:block; padding:0 10px; color:#FFF; font-size:12px; line-height: 40px; text-decoration:none;
+        }
+nav {
+  margin: 60px 30px;
+}
+nav ul {
+	padding: 0; margin: 0; list-style: none;	position: relative;
+	}
+nav ul li {
+	display:inline-block;
+	}
+nav a {
+	display:block; padding:0 10px; color:#FFF; font-size:15px; line-height: 60px;	text-decoration:none;text-transform: uppercase;
+}
+nav ul ul li a {
+	color:#000;
+}
+/* Hide Dropdowns by Default */
+nav ul ul {
+	display: none;	position: absolute;	top: 60px; /* the height of the main nav */
+}
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+animation-name: fadeInOpacity;
+animation-iteration-count: 1;
+animation-timing-function: ease-in;
+animation-duration: 1s;
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;	float:none;	display:list-item;	position: relative;  color: #000;
+}
+/* Change this in order to change the Dropdown symbol */
+li > a:after { content:  ' ↓'; } li > a:only-child:after { content: ''; }
+.gold {border: 2px solid rgb(255, 255, 10); border-radius:10px;margin-left:200px;}
+.gold a {color:rgb(255, 255, 10);}
+.gold2 {background-color: rgba(255, 255, 10, 0.8); border-radius:10px;text-align: center; width:40%;margin-top: 30px;}
+.gold2 a {color:rgb(0, 0, 100);text-decoration: none;font-size: 20px;line-height: 80px;}
+.main {width: 100%;height: 700px;; margin:10px; background-color: rgba(0, 0, 255, 0.4);margin:0;}
+.column {}
+.col1 {width: 45%;float:left;margin: 80px 0 0 80px;height: 100%;}
+.col2 {width:620px;height: 63px4;float:left;}
+
+h1 {font-size: 35px;color: #fff;text-transform: uppercase;}
+.column .col1 p {font-size: 12px;color: #fff;text-transform: uppercase;}
+#diapo {margin:20px;}
+h3 {font-size: 30px;color: #222;text-transform: uppercase;text-align: center;}
+.content{
+    height:250px;
+    width:250px;
+    padding:0;
+    margin:0 20px 20px 0;
+    position:relative;
+    float:left;
+
+}
+.hoverbar{
+    height:250px;
+    width:250px;
+    position:absolute;
+    bottom:0;
+    margin:-1px;
+    padding:-1px;
+    visibility:hidden;
+}
+.content:hover > .hoverbar{
+    visibility:visible;
+    background-color: rgba(0, 0, 255, 0.4);
+    opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: .5s;
   color: #fff;
-  overflow: hidden;
-}
- #gauche .bloc{
-  min-width: 52%;
-  float: left;
-  padding: 0 0 0 20px;
-}
-#gauche .bloc ul li {
-  font-size: 10px;
-  line-height: 30px;
-  vertical-align: middle;
-  margin-left: 0px;
-}
-ul {
-  list-style-type: none;
-  float: left;
-  margin-left: -45px;
-}
-.big {
-  font-size: 30px;
-  vertical-align:middle;
-  text-align: center;
-  margin-right: 30px;
-  width: 30px;
-}
- #droite{
-  width: 250px;
-  background-color: #fff;
-  padding: 80px 10px 0 10px;
-  height:100%;
-  float: right;
-  color: #f3f3f3;
-  overflow: hidden;
-}
-.input-group input, .input-group-1 input, .input-group-4 input{
-  width: 210px;
-  height:40px;
-  margin: -1px 0 0 10px;
-  border: 1px solid #ACB3B0;
-  padding-left: 20px;
-  float: left;
-}
-.input-group-1 input{
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.input-group-4 input{
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.btn {
-  width: 235px;
-  height: 40px;
-  margin-top: 10px;
-  background-color: rgba(63, 127, 191, 1);
-  border:1px solid rgba(63, 127, 191, 1);
-  border-radius: 5px;
-  color: #fff;
-  margin-left: 10px;
-}
-#grey {
-  background-color: #ACB3B0;
-  width:270px;
-  height: 80px;
-  position: absolute;
-  bottom: 0;
-  right:0;
-  font-size: 12px;
-  text-align: center;
-  line-height: 55px;
+  font-size: 15px;
 }

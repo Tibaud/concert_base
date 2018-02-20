@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :models
   root 'events#index'
   #utilisateurs
   get '/signup', to:'users#new'

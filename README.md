@@ -1,5 +1,7 @@
-# Les concerts CSS qui float
+# Checkr
 
-## Vas chercher du still! https://still-tor-60268.herokuapp.com/signup
+## Checkr en home! https://still-tor-60268.herokuapp.com/signup
 
-La feuille de style est dans app/assets/stylesheets/custom.CSS. Pas de plugin externe ni font embarquée, même pour les icônes (mais c'est moche les icônes ascii ^^).
+## pour l'autre projet suivre le lien en haut à droite de Checkr
+
+La feuille de style est dans app/assets/stylesheets/custom.CSS. Pas de js, y compris les animations
