@@ -69,11 +69,13 @@ ul {
 .big {
   font-size: 30px;
   vertical-align:middle;
+  text-align: right;
+  margin-right: 30px;
 }
  #droite{
   width: 250px;
   background-color: #fff;
-  padding: 50px 10px 0 10px;
+  padding: 100px 10px 0 10px;
   height:100%;
   float: right;
   color: #f3f3f3;
