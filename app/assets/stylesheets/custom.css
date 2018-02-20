@@ -99,8 +99,8 @@ ul {
   width: 235px;
   height: 40px;
   margin-top: 10px;
-  background-color: rgba(63, 127, 191);
-  border:1px solid rgba(63, 127, 191, 0.8);
+  background-color: rgba(63, 127, 191, 1);
+  border:1px solid rgba(63, 127, 191, 1);
   border-radius: 5px;
   color: #fff;
   margin-left: 10px;
