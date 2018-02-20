@@ -1,5 +1,6 @@
 <% provide(:title, "Concert") %>
 <h1>Les meilleurs concerts avec vos potes !</h1>
+<h2><%= link_to "Inscription", signup_path, class: 'link-to-text-color' %></h2>
   <div id="results">
     <% @events.each do |e|%>
       <div class="result">
