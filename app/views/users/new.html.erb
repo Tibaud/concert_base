@@ -1,31 +1,49 @@
 <% provide(:title, 'Inscription') %>
-<h1>Inscription</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: signup_path) do |f| %>
-    <%= render 'shared/error_messages' %>
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <%= f.text_field :name, class: 'form-control', placeholder: "Nom" %>
-    </div>
-    <br>
-    <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
-    </div>
-    <br>
-    <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <%= f.password_field :password, class: 'form-control', placeholder: "Mot de passe" %>
-    </div>
-    <br>
-    <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Confirmation" %>
-    </div>
-    <br>
-    <%= f.submit "Crée ton compte !", class: "btn btn-sm btn-primary", style: "width:70%; margin-left:15%" %>
-    <% end %>
+<div id="container">
+  <div id="gauche">
+  <div class="bloc">
+    <h1>Inscription</h1>
+    <p>L'inscription devient plus simple.</p>
+    <hr />
+    <ul>
+      <li>Un seul formulaire pour toutes les écoles</li>
+      <li>Gérez facilement vos candidatures</li>
+      <li>Stockez vos données scolaires</li>
+    </ul>
   </div>
+  <div id="droite">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@user, url: signup_path) do |f| %>
+        <%= render 'shared/error_messages' %>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <%= f.text_field :name, class: 'form-control', placeholder: "Nom" %>
+        </div>
+        <br>
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
+        </div>
+        <br>
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <%= f.password_field :password, class: 'form-control', placeholder: "Mot de passe" %>
+        </div>
+        <br>
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Confirmation" %>
+        </div>
+        <br>
+        <%= f.submit "Crée ton compte !", class: "btn btn-sm btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+    <div id="grey">
+      <p>Connectez vous !</p>
+    </div>
+
+  </div>
+</div>
 </div>
