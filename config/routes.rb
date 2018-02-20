@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :models
   root 'events#index'
+  get '/flynn', to:'events#flynn'
   #utilisateurs
   get '/signup', to:'users#new'
   post '/signup', to:'users#create'
