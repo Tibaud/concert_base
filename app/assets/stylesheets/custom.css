@@ -69,8 +69,9 @@ ul {
 .big {
   font-size: 30px;
   vertical-align:middle;
-  text-align: right;
+  text-align: center;
   margin-right: 30px;
+  width: 30px;
 }
  #droite{
   width: 250px;
