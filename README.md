@@ -6,4 +6,4 @@
 
 Les feuille de style sont dans app/assets/stylesheets/custom.css et flynn.css.
 
-Aucune js n'a été blessé durant le dev, puisque il n'y en a pas une goutte:)
+Aucune js n'a été blessée durant le dev, puisque il n'y en a pas une goutte:)
