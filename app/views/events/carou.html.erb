@@ -3,12 +3,21 @@
 <head>
   <title>Carousel jQuery</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<%= stylesheet_link_tag "custom" %>
 <%= stylesheet_link_tag "carou" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body>
   <div class="wrapper">
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Accueil')">Accueil</button>
+      <button class="tablinks" onclick="openTab(event, 'Menu')">Menu</button>
+      <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+    </div>
+
+    <div id="Accueil" class="tabcontent" style="display:block;">
+
 
     <div class="carousel">
       <div class="inner">
@@ -22,8 +31,21 @@
       <div class="arrow arrow-left"></div>
       <div class="arrow arrow-right"></div>
     </div>
+    <h3>Yum Yum</h3>
+    <p>Pas de photo de bouffe en stock, alors j'ai mis mes gosses. Il faut bien que ça serve !</p>
+  </div>
 
+  <div id="Menu" class="tabcontent">
+    <h3>Menu</h3>
+    <p>Tout plein de truc a Miam.</p>
+  </div>
+
+  <div id="Contact" class="tabcontent">
+    <h3>Contact</h3>
+    <p>Reserve en ligne!</p>
+  </div>
   </div>
 <%= javascript_include_tag "carou" %>
+<%= javascript_include_tag "tab" %>
 </body>
 </html>
