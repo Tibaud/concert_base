@@ -1,105 +1,33 @@
-<%= provide :stylesheets do %>
- <%= stylesheet_link_tag "custom" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabs en JS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<%= stylesheet_link_tag "custom" %>
+</head>
+<body>
+<p>Pour le Carousel jQuery <a href="/carou">c'est par là</a></p>
 
-<div id="picfond">
-  <div id="header">
-    <div id="logo"><img src="https://checkr.com/wp-content/themes/checkr/assets/img/logo.svg"/ width="130px;"></div>
-    <div id="topG"><a class="" href="/flynn">Projet Flynn</a></div>
-      <div id="container">
-            <nav>
-                <ul>
-                    <li><a href="#">Un</a></li>
-                    <li><a href="#">dropdown</a>
-                    <!-- First Tier Drop Down -->
-                    <ul>
-                        <li><a href="#">Themes</a></li>
-                        <li><a href="#">Plugins</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#">Fadein sans</a>
-                    <!-- First Tier Drop Down -->
-                    <ul>
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">Links</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#">script</a></li>
-                    <li class="gold"><a href="#">Get Started →</a></li>
-                </ul>
-            </nav>
-      </div>
-    </div>
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Accueil')">Accueil</button>
+  <button class="tablinks" onclick="openTab(event, 'Menu')">Menu</button>
+  <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+</div>
 
-  <div class="main">
-    <div class="column">
-      <div class="col1">
-        <h1>Hire great people. Faster.</h1>
-        <p>Checkr provides modern and compliant background checks for global enterprises and startups.</p>
-        <p class="gold2"><a href="http://checkr.com/product/">EXPLORE NOW →</a></p>
-      </div>
-      <div class="col2">
-        <video id="demo-vid" class="video-js" controls="false" autoplay loop preload="auto" poster="https://15743-presscdn-0-7-pagely.netdna-ssl.com/wp-content/themes/checkr/assets/video/Checkr_Hero_poster.png" width="606" height="634" data-setup="{}">
-        <source src="https://15743-presscdn-0-7-pagely.netdna-ssl.com/wp-content/themes/checkr/assets/video/Checkr_Hero.mp4" type='video/mp4' />
-        <source src="https://15743-presscdn-0-7-pagely.netdna-ssl.com/wp-content/themes/checkr/assets/video/Checkr_Hero.webm" type='video/webm' />
-        <img src="https://15743-presscdn-0-7-pagely.netdna-ssl.com/wp-content/themes/checkr/assets/video/Checkr_Hero_poster.png" width="606" height="634" />
-      </div>
-    </div>
-  </div>
+<div id="Accueil" class="tabcontent">
+  <h3>Accueil</h3>
+  <p>Slider ici, mais pas sans jquery donc un bon p :)</p>
 </div>
-<div class="main2">
-  <h3>Tailored to Fit Your Industry&#8217;s Needs</h3>
-  <div class="diapo">
-    <div class="content">
-      <h4>Un titre</h4>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/260px-Steve_Jobs_Headshot_2010-CROP.jpg" width="250" />
-        <div class="hoverbar">
-        <p>Du texte</p>
-        </div>
-    </div>
-    <div class="content">
-      <h4>Un titre</h4>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/260px-Steve_Jobs_Headshot_2010-CROP.jpg" width="250" />
-        <div class="hoverbar">
-        <p>Du texte</p>
-        </div>
-    </div>
-    <div class="content">
-      <h4>Un titre</h4>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/260px-Steve_Jobs_Headshot_2010-CROP.jpg" width="250" />
-        <div class="hoverbar">
-        <p>Du texte</p>
-        </div>
-    </div>
-    <div class="content">
-      <h4>Un titre</h4>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/260px-Steve_Jobs_Headshot_2010-CROP.jpg" width="250" />
-        <div class="hoverbar">
-        <p>Du texte</p>
-        </div>
-    </div>
-    <div class="content">
-      <h4>Un titre</h4>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/260px-Steve_Jobs_Headshot_2010-CROP.jpg" width="250" />
-        <div class="hoverbar">
-        <p>Du texte</p>
-        </div>
-    </div>
-    <div class="content">
-      <h4>Un titre</h4>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/260px-Steve_Jobs_Headshot_2010-CROP.jpg" width="250" />
-        <div class="hoverbar">
-        <p>Du texte</p>
-        </div>
-    </div>
-    <div class="content">
-      <h4>Un titre</h4>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/260px-Steve_Jobs_Headshot_2010-CROP.jpg" width="250" />
-        <div class="hoverbar">
-        <p>Du texte</p>
-        </div>
-    </div>
-  </div>
+
+<div id="Menu" class="tabcontent">
+  <h3>Menu</h3>
+  <p>Tout plein de truc a Miam.</p>
 </div>
-<% end %>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Reserve en ligne!</p>
+</div>
+<%= javascript_include_tag "tab" %>
+</body>
+</html>

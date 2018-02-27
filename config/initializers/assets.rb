@@ -13,4 +13,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( custom.css )
-Rails.application.config.assets.precompile += %w( flynn.css )
+Rails.application.config.assets.precompile += %w( tab.css )
+Rails.application.config.assets.precompile += %w( tab.js )
+Rails.application.config.assets.precompile += %w( carou.js )
+Rails.application.config.assets.precompile += %w( carou.css )

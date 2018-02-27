@@ -1,0 +1,148 @@
+
+html, body{
+	background: #eee;
+	width: 100%;
+}
+
+.wrapper{
+  width:90%;
+  position:relative;
+  margin:5% auto 0;
+}
+
+/*On regèle la hauteur comme un pourcentage de la largeur*/
+.carousel{
+	width: 100%;
+	position: relative;
+	padding-top: 60%;
+	overflow: hidden;
+}
+
+.inner{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+/* on utilise z-index pour mettre la slide active devant les slides inactives
+ * on règle right:0 et left:0 comme positionnement par défaut afin d'appliquer les transitions facilement
+ */
+.slide{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	right:0;
+	left:0;
+	z-index: 1;
+	opacity: 0;
+}
+
+.slide.active,
+.slide.left,
+.slide.right{
+	z-index: 2;
+	opacity: 1;
+}
+
+/**
+ * On utilise les animations de jQuery si pas possible en css3 en partant de la droite *
+ */
+
+.js-reset-left{left:auto}
+
+/**
+ * On prépositionne les slide qui sont sur le point d'être animées
+ */
+.slide.left{
+	left:-100%;
+	right:0;
+}
+
+.slide.right{
+	right:-100%;
+	left: auto;
+}
+
+.transition .slide.left{left:0%}
+.transition .slide.right{right:0%}
+
+/**
+ * on fait glisser la slide avant de la mettre derrière la slide qui vient d'arriver
+ */
+.transition .slide.shift-right{right: 100%;left:auto}
+.transition .slide.shift-left{left: 100%;right:auto}
+
+.transition .slide{
+	transition-property: right, left, margin;
+}
+
+.indicators{
+  width:100%;
+  position: absolute;
+  bottom:0;
+  z-index: 4;
+  padding:0;
+  text-align: center;
+}
+
+.indicators li{
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	margin: 5px;
+	background: #fff;
+	list-style-type: none;
+	border-radius: 50%;
+  cursor:pointer;
+  transition:background 0.3s ease-out;
+}
+
+.indicators li.active{background:#93278f}
+
+.indicators li:hover{background-color:#2b2b2b}
+
+.arrow{
+  width: 20px;
+  height: 20px;
+  position:absolute;
+  top:50%;
+  z-index:5;
+  border-top:3px solid #fff;
+  border-right:3px solid #fff;
+  cursor:pointer;
+  transition:border-color 0.3s ease-out;
+}
+
+.arrow:hover{border-color:#93278f}
+
+.arrow-left{
+  left:20px;
+  transform:rotate(225deg);
+}
+
+.arrow-right{
+  right:20px;
+  transform:rotate(45deg);
+}
+
+
+.slide{
+	text-align:center;
+  padding-top:25%;
+  background-size:cover;
+}
+
+.slide:nth-child(1){
+	background-image:url(https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/407451_10151409441103653_1406547362_n.jpg?oh=4d80a26ec23e0974a7f99e10b6905527&oe=5B038DBE);
+ }
+
+.slide:nth-child(2){
+	background-image:url(https://scontent-cdg2-1.cdninstagram.com/vp/59ec50f69242a81403e60d370f5d2d00/5B44A46E/t51.2885-15/e15/11232681_634016283365708_1689702137_n.jpg);
+}
+
+.slide:nth-child(3){
+	background-image:url(https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/13775796_10154400641993653_476114121652754307_n.jpg?oh=3dcad5a9cb15592f7c21425e977f17f8&oe=5B02CA0A);
+ }
