@@ -1,4 +1,5 @@
-(function(factory){
+// Comme on a des ballllllsss en cette fin de formation, on va faire un plug in slider OOP
+;(function(factory){
 
   if (typeof define === 'function' && define.amd) {
       define(['jquery'], factory);
@@ -9,16 +10,11 @@
   }
 
 })(function($){
-
-  /* on définit Carou comme une variable de type ‘function’.*/
+  // On utilise une fonction anonyme pour garantir que la fonction s'execute immédiatement
+  // On définit Carou comme une variable de type ‘function’.
   var Carou = (function(element, settings){
-
     var instanceUid = 0;
-
-    /*
-     * Constructor pour Carou
-     *
-     */
+    //* On détermine et fixe les valeurs par défaut pour Carou
     function _Carou(element, settings){
       this.defaults = {
         slideDuration: '3000',
@@ -28,6 +24,7 @@
       };
       // On créé une nouvelle propriété qui conserve les réglages par defaut après
       // fusion avec les paramètres de l'utilisateur
+
       this.settings = $.extend({},this,this.defaults,settings);
 
       // Cet objet conserve les valeurs qui changeront pendant que le plug in fonctionne
@@ -52,28 +49,24 @@
   })();
 
    Carou.prototype.init = function(){
-    //Test to see if cssanimations are available
+    //Teste si animation en css possibles
     this.csstransitionsTest();
-    // Add a class so we can style our carousel
+    // Ajout de classe pour pouvoir styler
     this.$el.addClass('Carou-carousel');
-    // Build out any DOM elements needed for the plugin to run
-    // Eg, we'll create an indicator dot for every slide in the carousel
+    // commande de build des DOM nécessaires au plugin
+    // par exemple créer un bullet pour chaque slide
     this.build();
-    // Eg. Let the user click next/prev arrows or indicator dots
+    // idem pour les event comme les clicks
     this.events();
-    // Bind any events we'll need for the carousel to function
+    // ordre d'activation
     this.activate();
-    // Start the timer loop to control progression to the next slide
+    // loop de temps pour contrôler la progression entre 2 slides
     this.initTimer();
   };
 
-	/**
-	 * Appropriated out of Modernizr v2.8.3
-	 * Creates a new DOM element and tests existence of properties on it's
-	 * Style object to see if CSSTransitions are available
-	 * @params void
-	 * @returns void
-	 *
+	/* Appropriated out of Modernizr v2.8.3
+	 * On créé un nouvel élément DOM et on test l'existance de propriété
+	 * pour voir si les transitions CSS existent
 	 */
 	Carou.prototype.csstransitionsTest = function(){
 		var elem = document.createElement('modernizr');
@@ -91,11 +84,8 @@
 	};
 
 	/**
-	 * Add the CSSTransition duration to the DOM Object's Style property
-	 * We trigger this function just before we want the slides to animate
-	 * @params void
-	 * @returns void
-	 *
+	 * On ajoute la durée de transition CSS au DOM
+	 * juste avant que le slide ne s'anime
 	 */
 	Carou.prototype.addCSSDuration = function(){
 		var _ = this;
@@ -105,11 +95,8 @@
 	}
 
 	/**
-   * Remove the CSSTransition duration from the DOM Object's style property
-   * We trigger this function just after the slides have animated
-   * @params void
-   * @returns void
-   *
+   * On retire la durée de transition css au DOM
+   * juste après que le slide ait été animé
    */
 	Carou.prototype.removeCSSDuration = function(){
 		var _ = this;
@@ -118,12 +105,7 @@
 		});
 	}
 
-	/**
-	 * Creates a list of indicators based on the amount of slides
-	 * @params void
-	 * @returns void
-	 *
-	 */
+	/**On créé les indicators (les bullets de navigation)*/
 	Carou.prototype.build = function(){
 		var $indicators = this.$el.append('<ul class="indicators" >').find('.indicators');
 		this.totalSlides = this.$el.find('.slide').length;
@@ -131,10 +113,7 @@
 	};
 
 	/**
-	 * Activates the first slide
-	 * Activates the first indicator
-	 * @params void
-	 * @returns void
+	 * On active le premier slide
 	 *
 	 */
 	Carou.prototype.activate = function(){
@@ -143,11 +122,7 @@
 	};
 
 	/**
-   * Associate event handlers to events
-   * For arrow events, we send the placement of the next slide to the handler
-   * @params void
-   * @returns void
-   *
+   * On associe les déclencheurs d'événement aux événements
    */
 	Carou.prototype.events = function(){
 		$('body')
@@ -157,34 +132,21 @@
 	};
 
 	/**
-	 * TIMER
-	 * Resets the timer
-	 * @params void
-	 * @returns void
-	 *
+	 * On détermine le reset de timer
 	 */
 	Carou.prototype.clearTimer = function(){
 		if (this.timer) clearInterval(this.timer);
 	};
 
 	/**
-	 * TIMER
-	 * Initialise the timer
-	 * @params void
-	 * @returns void
-	 *
+	 * On détemrine l'initialisation du timer
 	 */
 	Carou.prototype.initTimer = function(){
 		this.timer = setInterval(this.changeSlide, this.settings.slideDuration);
 	};
 
 	/**
-	 * TIMER
-	 * Start the timer
-	 * Reset the throttle to allow changeSlide to be executable
-	 * @params void
-	 * @returns void
-	 *
+	 * On détermine le début du timer
 	 */
 	Carou.prototype.startTimer = function(){
 		this.initTimer();
@@ -192,28 +154,24 @@
 	};
 
 	/**
-	 * MAIN LOGIC HANDLER
-	 * Triggers a set of subfunctions to carry out the animation
-	 * @params	object	event
-	 * @returns void
-	 *
+	 * On détermine la logique des déclencheur et leur impact sur le timer
 	 */
 	Carou.prototype.changeSlide = function(e){
-		//Ensure that animations are triggered one at a time
+		//on vérifie que les animations se déclenches une par une
 		if (this.throttle) return;
 		this.throttle = true;
 
-		//Stop the timer as the animation is getting carried out
+		//on stope le timer quand l'animation se déclenche
 		this.clearTimer();
 
-		// Returns the animation direction (left or right)
+		// on donne la direction de l'animation (gauche ou droite)
 		var direction = this._direction(e);
 
-		// Selects the next slide
+		// Sélection de la slide suivante
 		var animate = this._next(e,direction);
 		if (!animate) return;
 
-		//Active the next slide to scroll into view
+		//on déclenche l'animation de la slide suivante
 		var $nextSlide = this.$el.find('.slide').eq(this.currSlide).addClass(direction + ' active');
 
     if (!this.csstransitions){
@@ -224,15 +182,12 @@
 	};
 
 	/**
-	 * Returns the animation direction, right or left
-	 * @params	object	event
-	 * @returns strong	animation direction
-	 *
+	 * renvoit de la direction de l'animation
 	 */
 	Carou.prototype._direction = function(e){
 		var direction;
 
-		// Default to forward movement
+		// mouvement retour par défaut
 		if (typeof e !== 'undefined'){
 			direction = (typeof e.data === 'undefined' ? 'right' : e.data.direction);
 		} else {
@@ -242,7 +197,7 @@
 	};
 
 	/**
-	 * Updates our plugin with the next slide number
+	 * On met à jour le plug in avec le numéro de la slide suivante
 	 * @params	object	event
 	 * @params	string	animation direction
 	 * @returns boolean continue to animate?
@@ -250,12 +205,12 @@
 	 */
 	Carou.prototype._next = function(e,direction){
 
-    // If the event was triggered by a slide indicator, we store the data-index value of that indicator
+    // si déclenché par un bullet, on conservel e numéro de la bullet en stock
 		var index = (typeof e !== 'undefined' ? $(e.currentTarget).data('index') : undefined);
 
-		//Logic for determining the next slide
+		//logique pour déterminer le slide suivant
 		switch(true){
-			//If the event was triggered by an indicator, we set the next slide based on index
+			//Si déclenché par bullet, on règle le slide suivant par rapport à l'index
        case( typeof index !== 'undefined'):
 				if (this.currSlide == index){
 					this.startTimer();
@@ -280,14 +235,14 @@
 	};
 
 	/**
-	 * Executes the animation via CSS transitions
+	 * Execution de l'animation par transition CSS
 	 * @params	object	Jquery object the next slide to slide into view
 	 * @params	string	animation direction
 	 * @returns void
 	 *
 	 */
 	Carou.prototype._cssAnimation = function($nextSlide,direction){
-    //Init CSS transitions
+    //Initilisation de la transition CSS
 		setTimeout(function(){
 			this.$el.addClass('transition');
 			this.addCSSDuration();
@@ -309,8 +264,8 @@
 	};
 
 	/**
-	 * Executes the animation via JS transitions
-	 * @params	object	Jquery object the next slide to slide into view
+	 * Execution des animation par transition JS
+   * @params	object	Jquery object the next slide to slide into view
 	 * @params	string	animation direction
 	 * @returns void
 	 *
@@ -328,10 +283,10 @@
 		var animationPrev = {};
 		animationPrev[direction] = '100%';
 
-		//Animation: Current slide
+		//Animation: slide en cours
 		this.$currSlide.animate(animationPrev,this.settings.speed);
 
-		//Animation: Next slide
+		//Animation: slide suivante
 		$nextSlide.animate(animation,this.settings.speed,'swing',function(){
 			//Get rid of any JS animation residue
 			_.$currSlide.removeClass('active js-reset-left').attr('style','');
@@ -343,7 +298,7 @@
 	};
 
   /**
-	 * Ensures the slide indicators are pointing to the currently active slide
+	 * on vérifie que le bullet pointe bien vers le slide en cours
 	 * @params	void
 	 * @returns	void
 	 *
